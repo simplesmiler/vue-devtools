@@ -99,6 +99,13 @@ export function stringify (data) {
   return CircularJSON.stringify(data, replacer)
 }
 
+export function getSnapshot (store) {
+  return stringify({
+    state: store.state,
+    getters: store.getters || {}
+  })
+}
+
 function replacer (key) {
   const val = this[key]
   const type = typeof val

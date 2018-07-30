@@ -6,6 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     count: 0,
+    testInited: null,
     date: new Date(),
     set: new Set(),
     map: new Map()
@@ -23,7 +24,9 @@ export default new Vuex.Store({
     TEST_MAP: state => {
       state.map.set(`mykey_${state.map.size}`, state.map.size)
     },
-    TEST_INIT: state => {}
+    TEST_INIT: (state, payload) => {
+      state.testInited = payload
+    }
   },
   getters: {
     isPositive: state => state.count >= 0,

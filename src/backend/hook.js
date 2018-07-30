@@ -9,6 +9,8 @@
  * @param {Window} window
  */
 
+import { getSnapshot } from 'src/util'
+
 export function installHook (window) {
   let listeners = {}
 
@@ -63,6 +65,8 @@ export function installHook (window) {
         }
       }
     },
+
+    getSnapshot,
 
     supportsVuexBuffer: true
   }

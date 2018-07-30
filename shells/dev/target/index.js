@@ -42,6 +42,10 @@ store.commit('TEST_INIT', {
   foo: 'bar'
 })
 
+store.commit('TEST_INIT', {
+  foo: 'baz'
+})
+
 // custom element instance
 const ce = document.querySelector('#shadow')
 if (ce.attachShadow) {
